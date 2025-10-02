@@ -4,7 +4,7 @@ import { Resend } from "resend"
 
 export async function submitContactForm(formData: FormData) {
   console.log("[v0] Form submission started")
-  console.log("[v0] resend_API_KEY exists:", !!process.env.resend_API_KEY)
+  console.log("[v0] RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY)
 
   // Extract form data
   const motivo = formData.get("motivo") as string
@@ -33,8 +33,8 @@ export async function submitContactForm(formData: FormData) {
     }
   }
 
-  if (!process.env.resend_API_KEY) {
-    console.error("[v0] resend_API_KEY is not configured")
+  if (!process.env.RESEND_API_KEY) {
+    console.error("[v0] RESEND_API_KEY is not configured")
     return {
       success: false,
       error: "El servicio de email no está configurado. Por favor, contactá al administrador.",
@@ -42,7 +42,7 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
-    const resend = new Resend(process.env.resend_API_KEY)
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     const motivoLabels: Record<string, string> = {
       reparacion: "Reparación de motor",
