@@ -2,8 +2,6 @@
 
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function submitContactForm(formData: FormData) {
   console.log("[v0] Form submission started")
   console.log("[v0] RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY)
@@ -44,6 +42,8 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+
     const motivoLabels: Record<string, string> = {
       reparacion: "Reparación de motor",
       ensayo: "Ensayo de bombas",
