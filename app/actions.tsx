@@ -1,5 +1,9 @@
 "use server"
 
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
 export async function submitContactForm(formData: FormData) {
   // Extract form data
   const motivo = formData.get("motivo") as string
@@ -25,34 +29,62 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
-    // Here you would typically send the email using a service like:
-    // - Resend
-    // - SendGrid
-    // - Nodemailer
-    // - Or save to a database
+    const motivoLabels: Record<string, string> = {
+      reparacion: "Reparación de motor",
+      ensayo: "Ensayo de bombas",
+      balanceo: "Balanceo dinámico",
+      visita: "Visita técnica in situ",
+      otro: "Otro",
+    }
 
-    // For now, we'll simulate a successful submission
-    console.log("Form submission:", { motivo, nombre, email, consulta })
-
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    // In production, you would send an email like this:
-    /*
     await resend.emails.send({
-      from: 'contacto@bemec.ar',
-      to: 'eagustin@bemec.ar',
-      subject: `Nueva consulta: ${motivo}`,
+      from: "BEMEC Contacto <onboarding@resend.dev>", // Resend verified sender
+      to: "eagustin@bemec.ar",
+      replyTo: email, // Allow replying directly to the customer
+      subject: `Nueva consulta: ${motivoLabels[motivo] || motivo}`,
       html: `
-        <h2>Nueva consulta desde el sitio web</h2>
-        <p><strong>Motivo:</strong> ${motivo}</p>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Consulta:</strong></p>
-        <p>${consulta}</p>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <style>
+              body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+              .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+              .header { background-color: #1a9b8e; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+              .content { background-color: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
+              .field { margin-bottom: 15px; }
+              .label { font-weight: bold; color: #1a9b8e; }
+              .value { margin-top: 5px; }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <div class="header">
+                <h2 style="margin: 0;">Nueva consulta desde el sitio web</h2>
+              </div>
+              <div class="content">
+                <div class="field">
+                  <div class="label">Motivo de la consulta:</div>
+                  <div class="value">${motivoLabels[motivo] || motivo}</div>
+                </div>
+                <div class="field">
+                  <div class="label">Nombre:</div>
+                  <div class="value">${nombre}</div>
+                </div>
+                <div class="field">
+                  <div class="label">Email:</div>
+                  <div class="value">${email}</div>
+                </div>
+                <div class="field">
+                  <div class="label">Consulta:</div>
+                  <div class="value">${consulta.replace(/\n/g, "<br>")}</div>
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
       `,
     })
-    */
 
     return {
       success: true,
