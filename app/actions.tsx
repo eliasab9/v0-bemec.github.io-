@@ -47,7 +47,7 @@ export async function submitContactForm(formData: FormData) {
 
     const emailPayload = {
       from: "BEMEC Contacto <contacto@bemecsa.com>",
-      to: "eagustin@bemecsa.com",
+      to: "eagustin@bemec.ar",
       replyTo: email,
       subject: `Nueva consulta: ${motivoLabels[motivo] || motivo}`,
       html: `
