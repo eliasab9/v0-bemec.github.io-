@@ -4,14 +4,19 @@ import { Resend } from "resend"
 
 export async function submitContactForm(formData: FormData) {
   try {
+    console.log("[v0] Starting form submission")
+
     // Extract form data
     const motivo = formData.get("motivo") as string
     const nombre = formData.get("nombre") as string
     const email = formData.get("email") as string
     const consulta = formData.get("consulta") as string
 
+    console.log("[v0] Form data extracted:", { motivo, nombre, email, consultaLength: consulta?.length })
+
     // Validate required fields
     if (!motivo || !nombre || !email || !consulta) {
+      console.log("[v0] Validation failed: missing required fields")
       return {
         success: false,
         error: "Por favor, completá todos los campos requeridos.",
@@ -21,6 +26,7 @@ export async function submitContactForm(formData: FormData) {
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
+      console.log("[v0] Validation failed: invalid email format")
       return {
         success: false,
         error: "Por favor, ingresá un email válido.",
@@ -28,14 +34,20 @@ export async function submitContactForm(formData: FormData) {
     }
 
     // Check API key
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY
+    console.log("[v0] API key exists:", !!apiKey)
+    console.log("[v0] API key starts with 're_':", apiKey?.startsWith("re_"))
+
+    if (!apiKey) {
+      console.log("[v0] Error: API key not found")
       return {
         success: false,
         error: "El servicio de email no está configurado. Por favor, contactá al administrador.",
       }
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY)
+    console.log("[v0] Creating Resend instance")
+    const resend = new Resend(apiKey)
 
     const motivoLabels: Record<string, string> = {
       reparacion: "Reparación de motor",
@@ -94,12 +106,29 @@ export async function submitContactForm(formData: FormData) {
       `,
     }
 
+    console.log("[v0] Email payload prepared:", {
+      from: emailPayload.from,
+      to: emailPayload.to,
+      replyTo: emailPayload.replyTo,
+      subject: emailPayload.subject,
+    })
+
+    console.log("[v0] Sending email via Resend...")
     const response = await resend.emails.send(emailPayload)
+
+    console.log("[v0] Resend response:", response)
 
     return {
       success: true,
     }
   } catch (error) {
+    console.error("[v0] Error caught:", error)
+    console.error("[v0] Error details:", {
+      message: error instanceof Error ? error.message : "Unknown error",
+      name: error instanceof Error ? error.name : "Unknown",
+      stack: error instanceof Error ? error.stack : "No stack trace",
+    })
+
     let errorMessage = "Hubo un error al enviar el mensaje. Por favor, intentá de nuevo."
 
     if (error instanceof Error) {
