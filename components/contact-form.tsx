@@ -9,11 +9,20 @@ export function ContactForm() {
   const [message, setMessage] = useState("")
 
   async function handleSubmit(formData: FormData) {
+    console.log("[v0] Form submission started")
+    console.log("[v0] Form data:", {
+      motivo: formData.get("motivo"),
+      nombre: formData.get("nombre"),
+      email: formData.get("email"),
+      consulta: formData.get("consulta"),
+    })
+
     setStatus("loading")
     setMessage("")
 
     try {
       const result = await submitContactForm(formData)
+      console.log("[v0] Server action result:", result)
 
       if (result.success) {
         setStatus("success")
@@ -32,6 +41,7 @@ export function ContactForm() {
         setMessage(result.error || "Hubo un error. Por favor, intentá de nuevo.")
       }
     } catch (error) {
+      console.error("[v0] Form submission error:", error)
       setStatus("error")
       setMessage("Hubo un error. Por favor, intentá de nuevo.")
     }
@@ -48,6 +58,7 @@ export function ContactForm() {
           id="motivo"
           name="motivo"
           required
+          autoComplete="off"
           className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         >
           <option value="">Elegí una opción</option>
@@ -70,6 +81,7 @@ export function ContactForm() {
             name="nombre"
             type="text"
             required
+            autoComplete="name"
             placeholder="Tu nombre"
             className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground transition-colors placeholder:text-subtle focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
@@ -84,6 +96,7 @@ export function ContactForm() {
             name="email"
             type="email"
             required
+            autoComplete="email"
             placeholder="tu@email.com"
             className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground transition-colors placeholder:text-subtle focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
@@ -100,6 +113,7 @@ export function ContactForm() {
           name="consulta"
           required
           rows={5}
+          autoComplete="off"
           placeholder="Contanos en qué te podemos ayudar"
           className="w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-foreground transition-colors placeholder:text-subtle focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         />
