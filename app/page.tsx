@@ -2,6 +2,7 @@ import { Phone, Mail, MessageCircle, MapPin } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { ContactCard } from "@/components/contact-card"
 import Image from "next/image"
+import { PrivacyPolicyDialog } from "@/components/privacy-policy-dialog"
 
 export default function ContactPage() {
   return (
@@ -86,10 +87,11 @@ export default function ContactPage() {
 
         {/* Footer */}
         <footer className="mt-12 border-t border-border pt-8 text-center text-xs text-muted-foreground md:text-sm">
-          <p>
+          <p className="mb-2">
             © {new Date().getFullYear()} BEMEC S.A. · Venta, reparación y mantenimiento de motores eléctricos y
             electrobombas.
           </p>
+          <PrivacyPolicyDialog />
         </footer>
       </div>
 
