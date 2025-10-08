@@ -10,15 +10,16 @@ const changa = Changa({
 })
 
 export const metadata: Metadata = {
-  title: "Contacto | BEMEC S.A.",
-  description: "Contactá a BEMEC S.A. — Venta, reparación y mantenimiento de motores eléctricos y electrobombas.",
+  title: "BEMEC S.A. | Soluciones Electromecánicas",
+  description:
+    "Venta, reparación y mantenimiento de motores eléctricos y electrobombas. Más de 30 años de experiencia en Mendoza, Argentina.",
   openGraph: {
-    title: "Contacto | BEMEC S.A.",
+    title: "BEMEC S.A. | Soluciones Electromecánicas",
     description: "Calidad, rapidez y confiabilidad en soluciones electromecánicas.",
     type: "website",
     locale: "es_AR",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
