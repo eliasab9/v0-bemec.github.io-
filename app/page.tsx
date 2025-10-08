@@ -4,21 +4,10 @@ import { Phone, Mail, MessageCircle, MapPin } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { ContactCard } from "@/components/contact-card"
 import Image from "next/image"
-import { useState } from "react"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function ContactPage() {
-  const [open, setOpen] = useState(false)
-
   return (
     <main className="min-h-screen px-4 py-8 md:py-16">
       <div className="mx-auto max-w-6xl">
@@ -106,132 +95,14 @@ export default function ContactPage() {
             electrobombas.
           </p>
 
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <Button
-                variant="link"
-                className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground md:text-sm"
-              >
-                Políticas de Privacidad
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-h-[85vh] max-w-3xl">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">Políticas de Privacidad</DialogTitle>
-                <DialogDescription>BEMEC S.A. - Última actualización: {new Date().getFullYear()}</DialogDescription>
-              </DialogHeader>
-              <ScrollArea className="max-h-[60vh] pr-4">
-                <div className="space-y-6 text-sm">
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">1. Información que recopilamos</h3>
-                    <p className="mb-2 text-muted-foreground">Podemos recopilar los siguientes datos personales:</p>
-                    <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-                      <li>Nombre y apellido</li>
-                      <li>Dirección de correo electrónico</li>
-                      <li>Número de teléfono</li>
-                      <li>Empresa y cargo</li>
-                      <li>Información técnica relacionada con el uso de nuestros servicios (opcional)</li>
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">2. Finalidad del tratamiento</h3>
-                    <p className="mb-2 text-muted-foreground">
-                      Esta información es proporcionada voluntariamente por usted al completar un formulario, solicitar
-                      una cotización o comunicarse con nuestro equipo.
-                    </p>
-                    <p className="mb-2 text-muted-foreground">
-                      Los datos recopilados serán utilizados exclusivamente para:
-                    </p>
-                    <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-                      <li>Responder consultas y solicitudes de cotización.</li>
-                      <li>Brindar asesoramiento técnico y comercial.</li>
-                      <li>Enviar información relevante sobre productos, servicios y novedades de BEMEC S.A.</li>
-                      <li>Cumplir con obligaciones legales o contractuales.</li>
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">3. Consentimiento</h3>
-                    <p className="text-muted-foreground">
-                      Al proporcionar sus datos personales, usted otorga su consentimiento expreso para que BEMEC S.A.
-                      los utilice conforme a lo establecido en esta política.
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">4. Protección de datos</h3>
-                    <p className="text-muted-foreground">
-                      BEMEC S.A. se compromete a proteger la confidencialidad de su información personal mediante
-                      medidas de seguridad técnicas y organizativas adecuadas. No compartimos, vendemos ni transferimos
-                      sus datos a terceros sin su consentimiento, salvo cuando sea requerido por ley.
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">5. Derechos del titular</h3>
-                    <p className="mb-2 text-muted-foreground">
-                      Usted tiene derecho a acceder, rectificar, actualizar o solicitar la eliminación de sus datos
-                      personales en cualquier momento. Para ejercer estos derechos, puede contactarnos a través de:
-                    </p>
-                    <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-                      <li>
-                        Email:{" "}
-                        <a href="mailto:eagustin@bemec.ar" className="text-primary hover:underline">
-                          eagustin@bemec.ar
-                        </a>
-                      </li>
-                      <li>
-                        Teléfono:{" "}
-                        <a href="tel:+542615132147" className="text-primary hover:underline">
-                          +54 261 513 2147
-                        </a>
-                      </li>
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">6. Uso de cookies</h3>
-                    <p className="text-muted-foreground">
-                      Nuestro sitio web puede utilizar cookies para mejorar la experiencia del usuario. Puede configurar
-                      su navegador para rechazar cookies, aunque esto podría afectar algunas funcionalidades del sitio.
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">7. Modificaciones a esta política</h3>
-                    <p className="text-muted-foreground">
-                      BEMEC S.A. se reserva el derecho de modificar esta política de privacidad en cualquier momento.
-                      Las actualizaciones serán publicadas en nuestro sitio web con la fecha de la última revisión.
-                    </p>
-                  </section>
-
-                  <section>
-                    <h3 className="mb-2 text-base font-bold">8. Contacto</h3>
-                    <p className="text-muted-foreground">
-                      Si tiene preguntas o inquietudes sobre esta política de privacidad, puede comunicarse con nosotros
-                      a través de:
-                    </p>
-                    <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-                      <li>
-                        Email:{" "}
-                        <a href="mailto:eagustin@bemec.ar" className="text-primary hover:underline">
-                          eagustin@bemec.ar
-                        </a>
-                      </li>
-                      <li>
-                        Teléfono:{" "}
-                        <a href="tel:+542615132147" className="text-primary hover:underline">
-                          +54 261 513 2147
-                        </a>
-                      </li>
-                      <li>Dirección: Independencia 48, M5501 Godoy Cruz, Mendoza, Argentina</li>
-                    </ul>
-                  </section>
-                </div>
-              </ScrollArea>
-            </DialogContent>
-          </Dialog>
+          <Link href="/privacy-policy">
+            <Button
+              variant="link"
+              className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground md:text-sm"
+            >
+              Políticas de Privacidad
+            </Button>
+          </Link>
         </footer>
       </div>
 
