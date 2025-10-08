@@ -13,22 +13,22 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="border-b border-border bg-gradient-to-b from-background to-muted/20">
           <HeroCarousel />
-          <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-            <h1 className="mb-6 text-balance text-center text-4xl font-bold leading-tight lg:text-6xl md:text-4xl">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-24">
+            <h1 className="mb-4 text-balance text-center text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl lg:text-6xl">
               Soluciones Electromecánicas de Confianza
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-balance text-center text-lg text-muted-foreground md:text-base">
+            <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base text-muted-foreground sm:mb-8 sm:text-lg">
               Venta, reparación y mantenimiento de motores eléctricos y electrobombas. Más de 30 años de experiencia
               respaldando a la industria argentina.
             </p>
-            <div className="flex justify-center gap-4">
-              <Link href="/contacto">
-                <Button size="lg" className="text-base font-semibold">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+              <Link href="/contacto" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full text-base font-semibold sm:w-auto">
                   Solicitar Cotización
                 </Button>
               </Link>
-              <Link href="/nuestros-servicios">
-                <Button size="lg" variant="outline" className="text-base font-semibold bg-transparent">
+              <Link href="/nuestros-servicios" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full bg-transparent text-base font-semibold sm:w-auto">
                   Ver Servicios
                 </Button>
               </Link>
@@ -37,14 +37,14 @@ export default function HomePage() {
         </section>
 
         {/* Services Overview */}
-        <section className="border-b border-border px-4 py-16 md:py-20">
+        <section className="border-b border-border px-4 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Nuestros Servicios</h2>
-            <p className="mx-auto mb-12 max-w-2xl text-balance text-center text-muted-foreground md:text-lg">
+            <h2 className="mb-3 text-center text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">Nuestros Servicios</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-balance text-center text-sm text-muted-foreground sm:mb-12 sm:text-base md:text-lg">
               Ofrecemos soluciones integrales para todas sus necesidades electromecánicas
             </p>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Wrench className="h-6 w-6 text-primary" />
@@ -89,7 +89,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="mt-6 text-center sm:mt-8">
               <Link href="/nuestros-servicios">
                 <Button variant="outline" size="lg">
                   Ver Todos los Servicios
@@ -100,14 +100,14 @@ export default function HomePage() {
         </section>
 
         {/* Trust Section */}
-        <section className="px-4 py-16 md:py-20">
+        <section className="px-4 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Confían en Nosotros</h2>
-            <p className="mx-auto mb-12 max-w-2xl text-balance text-center text-muted-foreground md:text-lg">
+            <h2 className="mb-3 text-center text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">Confían en Nosotros</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-balance text-center text-sm text-muted-foreground sm:mb-12 sm:text-base md:text-lg">
               Empresas líderes de diversos sectores confían en BEMEC S.A. para sus soluciones electromecánicas
             </p>
 
-            <div className="mb-16 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+            <div className="mb-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 lg:grid-cols-6 sm:mb-16">
               <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:100ms]">
                 <Image
                   src="/images/design-mode/Molinos%20.png"
@@ -164,7 +164,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
               <div className="rounded-xl border border-border bg-card p-8 text-center">
                 <div className="mb-4 text-4xl font-bold text-primary">500+</div>
                 <h3 className="mb-2 text-lg font-semibold">Clientes Satisfechos</h3>
@@ -189,10 +189,10 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-border bg-muted/30 px-4 py-16">
+        <section className="border-t border-border bg-muted/30 px-4 py-12 sm:py-16">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">¿Necesitás una Cotización?</h2>
-            <p className="mb-8 text-lg text-muted-foreground">
+            <h2 className="mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">¿Necesitás una Cotización?</h2>
+            <p className="mb-6 text-base text-muted-foreground sm:mb-8 sm:text-lg">
               Contactanos hoy y recibí asesoramiento personalizado para tu proyecto
             </p>
             <Link href="/contacto">

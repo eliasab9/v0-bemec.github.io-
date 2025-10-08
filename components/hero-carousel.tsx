@@ -43,8 +43,8 @@ export function HeroCarousel() {
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Slides */}
-      <div className="relative aspect-[16/6] w-full">
+      {/* Slides - Adjusted aspect ratio for mobile (taller) and desktop (wider) */}
+      <div className="relative aspect-[16/9] w-full sm:aspect-[16/7] md:aspect-[16/6]">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -65,34 +65,34 @@ export function HeroCarousel() {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Larger touch targets for mobile */}
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90"
+        className="absolute left-2 top-1/2 h-10 w-10 -translate-y-1/2 bg-background/80 hover:bg-background/90 sm:left-4 sm:h-12 sm:w-12"
         onClick={prevSlide}
         aria-label="Imagen anterior"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
       </Button>
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90"
+        className="absolute right-2 top-1/2 h-10 w-10 -translate-y-1/2 bg-background/80 hover:bg-background/90 sm:right-4 sm:h-12 sm:w-12"
         onClick={nextSlide}
         aria-label="Siguiente imagen"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
       </Button>
 
-      {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+      {/* Dots Navigation - Larger touch targets for mobile */}
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2 sm:bottom-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentSlide ? "w-8 bg-primary" : "w-2 bg-white/60 hover:bg-white/80"
+            className={`h-2.5 rounded-full transition-all sm:h-2 ${
+              index === currentSlide ? "w-8 bg-primary sm:w-8" : "w-2.5 bg-white/60 hover:bg-white/80 sm:w-2"
             }`}
             aria-label={`Ir a imagen ${index + 1}`}
           />
