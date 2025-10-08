@@ -86,7 +86,10 @@ export default function ContactPage() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-12 border-t border-border pt-8 text-center text-xs text-muted-foreground md:text-sm">
+        <footer
+          className="mt-12 border-t border-border pt-8 text-center text-xs text-muted-foreground md:text-sm"
+          data-testid="footer-with-privacy"
+        >
           <p className="mb-2">
             © {new Date().getFullYear()} BEMEC S.A. · Venta, reparación y mantenimiento de motores eléctricos y
             electrobombas.

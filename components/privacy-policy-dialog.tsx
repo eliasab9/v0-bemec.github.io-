@@ -18,7 +18,11 @@ export function PrivacyPolicyDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="link" className="h-auto p-0 text-xs text-muted-foreground hover:text-primary md:text-sm">
+        <Button
+          variant="link"
+          className="h-auto p-0 text-xs text-muted-foreground hover:text-primary md:text-sm"
+          data-version="2.0"
+        >
           Políticas de Privacidad
         </Button>
       </DialogTrigger>
