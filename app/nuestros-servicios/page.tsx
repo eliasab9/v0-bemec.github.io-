@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Wrench, Zap, Shield, CheckCircle2, Settings, Package, Headphones, Clock } from "lucide-react"
 import Link from "next/link"
+import { HeroCarousel } from "@/components/hero-carousel"
 
 export const metadata = {
   title: "Nuestros Servicios | BEMEC S.A.",
@@ -10,10 +11,27 @@ export const metadata = {
 }
 
 export default function NuestrosServiciosPage() {
+  const carouselImages = [
+    {
+      src: "/bemec-pump-installation.jpeg",
+      alt: "Instalación de bomba industrial con grúa - BEMEC S.A.",
+    },
+    {
+      src: "/bemec-motor-rewinding.jpeg",
+      alt: "Rebobinado de motor eléctrico - BEMEC S.A.",
+    },
+    {
+      src: "/bemec-stator-repair.jpeg",
+      alt: "Reparación de estator de motor industrial - BEMEC S.A.",
+    },
+  ]
+
   return (
     <>
       <Navigation />
       <main className="min-h-screen">
+        <HeroCarousel images={carouselImages} />
+
         {/* Hero Section */}
         <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
           <div className="mx-auto max-w-4xl text-center">

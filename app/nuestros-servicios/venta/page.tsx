@@ -29,24 +29,13 @@ export default function VentaPage() {
             </div>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Venta de Equipos</h1>
             <p className="text-balance text-lg text-muted-foreground md:text-xl">
-              Comercialización de motores eléctricos y electrobombas de primeras marcas con garantía y soporte técnico
-              completo
+              Comercialización de motores eléctricos, electrobombas y reductores de velocidad de primeras marcas con garantía y soporte técnico completo
             </p>
           </div>
         </section>
 
         {/* Image Section */}
-        <section className="border-b border-border px-4 py-12">
-          <div className="mx-auto max-w-4xl">
-            <Image
-              src="/showroom-display-of-new-electric-motors-and-indust.jpg"
-              alt="Venta de motores eléctricos y electrobombas"
-              width={1200}
-              height={500}
-              className="rounded-xl object-cover"
-            />
-          </div>
-        </section>
+        
 
         {/* Details Section */}
         <section className="border-b border-border px-4 py-16 md:py-20">
@@ -63,15 +52,15 @@ export default function VentaPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Motores monofásicos (0.25 a 5 HP)</span>
+                    <span>Motores monofásicos (0.25 a 3 HP)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Motores trifásicos (0.5 a 500 HP)</span>
+                    <span>Motores trifásicos (0,25 a 900 HP)                                </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Motores de alta eficiencia (IE3, IE4)</span>
+                    <span>Motores de alta eficiencia (IE2, IE3, IE4)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -89,19 +78,19 @@ export default function VentaPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Electrobombas sumergibles</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <span>Electrobombas centrífugas</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Bombas periféricas</span>
+                    <span>Electrobombas sumergibles</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Bombas de pozo profundo</span>
+                    <span>Bombas de desplazamiento positivo</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Bombas periféricas</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -111,27 +100,27 @@ export default function VentaPage() {
               </div>
 
               <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="mb-4 text-xl font-bold">Repuestos y Accesorios</h3>
+                <h3 className="mb-4 text-xl font-bold">Reductores de velocidad</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Rodamientos de todas las medidas</span>
+                    <span>Reductores de engranajes helicoidales</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Capacitores de arranque y marcha</span>
+                    <span>Reductores de tornillo sin fin</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Ventiladores y tapas</span>
+                    <span>Reductores planetarios</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Borneras y cajas de conexión</span>
+                    <span>Reductores de engranajes cónicos</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Sellos mecánicos y retenes</span>
+                    
+                    
                   </li>
                 </ul>
               </div>
@@ -169,88 +158,25 @@ export default function VentaPage() {
                 Trabajamos con las marcas más reconocidas del mercado nacional e internacional:
               </p>
               <div className="mb-8 grid gap-4 md:grid-cols-3">
-                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">WEG</div>
                 <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
                   Siemens
                 </div>
+                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">WEG</div>
                 <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">TEM</div>
-                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">MEC</div>
-                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
-                  Motorarg
-                </div>
                 <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
                   Rotor Pump
                 </div>
                 <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
+                  Motorarg
+                </div>
+                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">Wilo</div>
+                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
                   Lentax
                 </div>
-              </div>
-
-              {/* Brand Logos */}
-              <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-7">
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/weg-electric-motors-logo.jpg"
-                    alt="WEG"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
+                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">
+                  Vibromac
                 </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/siemens-logo.png"
-                    alt="Siemens"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/tem-electric-motors-logo.jpg"
-                    alt="TEM"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/mec-motors-logo.jpg"
-                    alt="MEC"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/motorarg-logo.jpg"
-                    alt="Motorarg"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/rotor-pump-logo.jpg"
-                    alt="Rotor Pump"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
-                <div className="flex items-center justify-center rounded-lg border border-border bg-background p-4">
-                  <Image
-                    src="/lentax-pumps-logo.jpg"
-                    alt="Lentax"
-                    width={120}
-                    height={60}
-                    className="h-16 w-full object-contain"
-                  />
-                </div>
+                <div className="rounded-lg border border-border bg-background p-4 text-center font-semibold">MEC</div>
               </div>
             </div>
 

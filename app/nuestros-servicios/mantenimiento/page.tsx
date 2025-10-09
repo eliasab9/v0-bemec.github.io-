@@ -2,7 +2,6 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Zap, CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export const metadata = {
   title: "Mantenimiento Preventivo | BEMEC S.A.",
@@ -29,35 +28,61 @@ export default function MantenimientoPage() {
               <Zap className="h-8 w-8 text-primary" />
             </div>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Mantenimiento Preventivo</h1>
-            <p className="text-balance text-lg text-muted-foreground md:text-xl">
-              Planes diseñados para maximizar la vida útil de sus equipos y minimizar paradas no programadas
-            </p>
+            {/* Brief description of preventive maintenance */}
+            <h2 className="text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
+              A través de inspecciones programadas, análisis predictivos y ajustes especializados, identificamos y
+              corregimos problemas potenciales antes de que se conviertan en fallas costosas.
+            </h2>
           </div>
         </section>
 
         {/* Image Section */}
-        <section className="border-b border-border px-4 py-12">
-          <div className="mx-auto max-w-4xl">
-            <Image
-              src="/industrial-technician-performing-preventive-mainte.jpg"
-              alt="Mantenimiento preventivo de motores eléctricos"
-              width={1200}
-              height={500}
-              className="rounded-xl object-cover"
-            />
-          </div>
-        </section>
 
         {/* Details Section */}
         <section className="border-b border-border px-4 py-16 md:py-20">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Planes de Mantenimiento</h2>
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-              El mantenimiento preventivo es fundamental para garantizar el funcionamiento óptimo de sus equipos
-              electromecánicos. Nuestros planes personalizados ayudan a prevenir fallas costosas y prolongan
-              significativamente la vida útil de sus motores y electrobombas.
-            </p>
+            {/* Beneficios Section */}
+            <div className="mb-12 rounded-xl bg-muted/50 p-8">
+              <h3 className="mb-6 text-2xl font-bold text-center text-center">
+                Beneficios
+              </h3>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Reducción de Costos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Evitá reparaciones costosas y paradas imprevistas de producción
+                  </p>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Mayor Vida Útil</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Prolongá significativamente la duración de tus equipos
+                  </p>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Eficiencia Energética</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Optimizá el consumo eléctrico y reducí costos operativos
+                  </p>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Seguridad</h4>
+                  <p className="text-sm text-muted-foreground">Minimizá riesgos de accidentes y fallas peligrosas</p>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Planificación</h4>
+                  <p className="text-sm text-muted-foreground">Programá intervenciones en momentos convenientes</p>
+                </div>
+                <div>
+                  <h4 className="mb-2 font-semibold text-primary">Documentación</h4>
+                  <p className="text-sm text-muted-foreground">Mantené un historial completo de cada equipo</p>
+                </div>
+              </div>
+            </div>
 
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Planes de Mantenimiento</h2>
+
+            {/* Planes Grid */}
             <div className="mb-12 grid gap-6 md:grid-cols-2">
               <div className="rounded-xl border border-border bg-card p-6">
                 <h3 className="mb-4 text-xl font-bold">Inspección Periódica</h3>
@@ -148,69 +173,15 @@ export default function MantenimientoPage() {
               </div>
             </div>
 
-            <div className="mb-12 rounded-xl bg-muted/50 p-8">
-              <h3 className="mb-6 text-2xl font-bold">Beneficios del Mantenimiento Preventivo</h3>
-              <div className="grid gap-6 md:grid-cols-3">
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Reducción de Costos</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Evitá reparaciones costosas y paradas imprevistas de producción
-                  </p>
-                </div>
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Mayor Vida Útil</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Prolongá significativamente la duración de tus equipos
-                  </p>
-                </div>
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Eficiencia Energética</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Optimizá el consumo eléctrico y reducí costos operativos
-                  </p>
-                </div>
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Seguridad</h4>
-                  <p className="text-sm text-muted-foreground">Minimizá riesgos de accidentes y fallas peligrosas</p>
-                </div>
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Planificación</h4>
-                  <p className="text-sm text-muted-foreground">Programá intervenciones en momentos convenientes</p>
-                </div>
-                <div>
-                  <h4 className="mb-2 font-semibold text-primary">Documentación</h4>
-                  <p className="text-sm text-muted-foreground">Mantené un historial completo de cada equipo</p>
-                </div>
-              </div>
-            </div>
-
+            {/* Informes Técnicos Detallados */}
             <div className="rounded-xl border border-border bg-card p-8">
               <h3 className="mb-4 text-2xl font-bold">Informes Técnicos Detallados</h3>
               <p className="mb-4 text-muted-foreground">
                 Cada visita de mantenimiento incluye un informe técnico completo que documenta:
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Estado general del equipo</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Mediciones eléctricas y mecánicas realizadas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Trabajos realizados y repuestos utilizados</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Recomendaciones para próximas intervenciones</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Registro fotográfico cuando sea necesario</span>
-                </li>
-              </ul>
+              <p className="leading-relaxed text-muted-foreground">
+                Evaluación completa del estado general del equipo, junto con todas las mediciones eléctricas y mecánicas realizadas durante la inspección. Documentamos los trabajos realizados, proporcionando recomendaciones específicas para las próximas intervenciones preventivas.
+              </p>
             </div>
           </div>
         </section>

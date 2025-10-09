@@ -3,7 +3,6 @@ import { HeroCarousel } from "@/components/hero-carousel"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Wrench, Zap, Shield } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -18,8 +17,8 @@ export default function HomePage() {
               Soluciones Electromecánicas de Confianza
             </h1>
             <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base text-muted-foreground sm:mb-8 sm:text-lg">
-              Venta, reparación y mantenimiento de motores eléctricos y electrobombas. Más de 30 años de experiencia
-              respaldando a la industria argentina.
+              Venta, reparación y mantenimiento de motores eléctricos, electrobombas y reductores de velocidad. Más de
+              30 años de experiencia respaldando a la industria argentina.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <Link href="/contacto" className="w-full sm:w-auto">
@@ -45,48 +44,55 @@ export default function HomePage() {
             </p>
 
             <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Wrench className="h-6 w-6 text-primary" />
+              <Link href="/nuestros-servicios" className="block">
+                <div className="rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer h-full">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Wrench className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold">Reparación y Mantenimiento</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Reparación especializada y planes de mantenimiento preventivo para maximizar la vida útil de sus
+                    equipos.
+                  </p>
                 </div>
-                <h3 className="mb-2 text-xl font-bold">Reparación y Mantenimiento</h3>
-                <p className="text-sm text-muted-foreground">
-                  Reparación especializada y planes de mantenimiento preventivo para maximizar la vida útil de sus
-                  equipos.
-                </p>
-              </div>
+              </Link>
 
-              <div className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-6 w-6 text-primary" />
+              <Link href="/nuestros-servicios" className="block">
+                <div className="rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer h-full">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold">Venta</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Comercialización de motores eléctricos y electrobombas de primeras marcas.
+                  </p>
                 </div>
-                <h3 className="mb-2 text-xl font-bold">Venta</h3>
-                <p className="text-sm text-muted-foreground">
-                  Comercialización de motores eléctricos y electrobombas de primeras marcas.
-                </p>
-              </div>
+              </Link>
 
-              <div className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Zap className="h-6 w-6 text-primary" />
+              <Link href="/nuestros-servicios" className="block">
+                <div className="rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer h-full">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Zap className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold">Servicios Comerciales</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Ensayos eléctricos de máquinas de baja y media tensión. Traslado e instalación de equipos. Medición
+                    de resistencia de bobinados.
+                  </p>
                 </div>
-                <h3 className="mb-2 text-xl font-bold">Servicios Comerciales</h3>
-                <p className="text-sm text-muted-foreground">
-                  Ensayos eléctricos de máquinas de baja y media tensión (motores, generadores, transformadores, etc.).
-                  Traslado e instalación de equipos. Índice de polarización. Salto de tensión. Tangente delta y
-                  descargas parciales. Medición de resistencia de bobinados.
-                </p>
-              </div>
+              </Link>
 
-              <div className="rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-lg">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <CheckCircle2 className="h-6 w-6 text-primary" />
+              <Link href="/nuestros-servicios" className="block">
+                <div className="rounded-xl border border-border bg-card p-6 transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer h-full">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <CheckCircle2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold">Asesoramiento</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Asesoramiento técnico especializado para la selección de equipos adecuados.
+                  </p>
                 </div>
-                <h3 className="mb-2 text-xl font-bold">Asesoramiento</h3>
-                <p className="text-sm text-muted-foreground">
-                  Asesoramiento técnico especializado para la selección de equipos adecuados.
-                </p>
-              </div>
+              </Link>
             </div>
 
             <div className="mt-6 text-center sm:mt-8">
@@ -103,66 +109,9 @@ export default function HomePage() {
         <section className="px-4 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="mb-3 text-center text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">Confían en Nosotros</h2>
-            <p className="mx-auto mb-8 max-w-2xl text-balance text-center text-sm text-muted-foreground sm:mb-12 sm:text-base md:text-lg">
+            <p className="mx-auto mb-8 max-w-2xl text-balance text-sm text-muted-foreground sm:mb-12 sm:text-base md:text-lg text-center">
               Empresas líderes de diversos sectores confían en BEMEC S.A. para sus soluciones electromecánicas
             </p>
-
-            <div className="mb-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 lg:grid-cols-6 sm:mb-16">
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:100ms]">
-                <Image
-                  src="/images/design-mode/Molinos%20.png"
-                  alt="Molinos"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:200ms]">
-                <Image
-                  src="/images/design-mode/trivento.png"
-                  alt="Trivento"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:300ms]">
-                <Image
-                  src="/images/design-mode/unilever.png"
-                  alt="Unilever"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:400ms]">
-                <Image
-                  src="/images/design-mode/arcor.png"
-                  alt="Arcor"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:500ms]">
-                <Image
-                  src="/images/design-mode/verallia.png"
-                  alt="Verallia"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-              <div className="flex items-center justify-center opacity-0 animate-fade-in-up [animation-delay:600ms]">
-                <Image
-                  src="/images/design-mode/Logo_de_YPF.svg.png"
-                  alt="YPF"
-                  width={140}
-                  height={80}
-                  className="h-20 w-36 object-contain"
-                />
-              </div>
-            </div>
 
             <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
               <div className="rounded-xl border border-border bg-card p-8 text-center">

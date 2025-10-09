@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Wrench, CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import { RepairCarousel } from "@/components/repair-carousel"
 
 export const metadata = {
   title: "Reparación Especializada | BEMEC S.A.",
@@ -30,126 +30,22 @@ export default function ReparacionPage() {
             </div>
             <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Reparación Especializada</h1>
             <p className="text-balance text-lg text-muted-foreground md:text-xl">
-              Reparación integral de motores eléctricos y electrobombas con tecnología de punta y personal altamente
-              capacitado
+              En BEMEC S.A. contamos con más de 30 años de experiencia en la reparación de motores eléctricos y electrobombas. Nuestro equipo técnico especializado utiliza tecnología de última generación para garantizar reparaciones de la más alta calidad
             </p>
           </div>
         </section>
 
         {/* Image Section */}
-        <section className="border-b border-border px-4 py-12">
-          <div className="mx-auto max-w-4xl">
-            <Image
-              src="/electric-motor-repair-workshop-with-technician-rew.jpg"
-              alt="Taller de reparación de motores eléctricos"
-              width={1200}
-              height={500}
-              className="rounded-xl object-cover"
-            />
-          </div>
-        </section>
+        
 
         {/* Details Section */}
         <section className="border-b border-border px-4 py-16 md:py-20">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Servicios de Reparación</h2>
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-              En BEMEC S.A. contamos con más de 30 años de experiencia en la reparación de motores eléctricos y
-              electrobombas. Nuestro equipo técnico especializado utiliza tecnología de última generación para
-              garantizar reparaciones de la más alta calidad.
-            </p>
+            
+            
 
-            <div className="mb-12 grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="mb-4 text-xl font-bold">Rebobinado de Motores</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Rebobinado de motores de baja y media tensión</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Motores monofásicos y trifásicos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Todas las potencias y marcas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Garantía en todos los trabajos</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="mb-4 text-xl font-bold">Reparación de Electrobombas</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Electrobombas sumergibles</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Electrobombas centrífugas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Cambio de impulsores y sellos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Pruebas de funcionamiento</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="mb-4 text-xl font-bold">Servicios Mecánicos</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Cambio de rodamientos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Rectificación de ejes</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Balanceo dinámico de rotores</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Alineación de acoplamientos</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="rounded-xl border border-border bg-card p-6">
-                <h3 className="mb-4 text-xl font-bold">Control de Calidad</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Pruebas eléctricas completas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Medición de resistencia de aislación</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Verificación de consumo y rendimiento</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <span>Informe técnico detallado</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="rounded-xl bg-muted/50 p-8">
+            {/* Proceso de Reparación Section */}
+            <div className="mb-12 rounded-xl bg-muted/50 p-8">
               <h3 className="mb-4 text-2xl font-bold">Proceso de Reparación</h3>
               <ol className="space-y-4">
                 <li className="flex gap-4">
@@ -197,6 +93,101 @@ export default function ReparacionPage() {
                   </div>
                 </li>
               </ol>
+            </div>
+
+            {/* Services Grid */}
+            <div className="mb-12 grid gap-6 md:grid-cols-2">
+              <div className="rounded-xl border border-border bg-card p-6">
+                <h3 className="mb-4 text-xl font-bold">Rebobinado de Motores</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Rebobinado de motores de baja tensión</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Motores monofásicos y trifásicos</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Todas las potencias y marcas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Garantía en todos los trabajos</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-6">
+                <h3 className="mb-4 text-xl font-bold">Reparación de Electrobombas</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Electrobombas sumergibles</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Electrobombas centrífugas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Cambio de impulsores y sellos</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Bombas de desplazamiento positivo</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Pruebas de funcionamiento</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-6">
+                <h3 className="mb-4 text-xl font-bold">Servicios Mecánicos</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Cambio de rodamientos</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Rectificación de ejes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Balanceo dinámico de rotores, tornillos sin fin, turbinas, hélices, etc. Hasta 500 Kg</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Alineación de acoplamientos</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-xl border border-border bg-card p-6">
+                <h3 className="mb-4 text-xl font-bold">Control de Calidad</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Pruebas eléctricas completas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Medición de resistencia de aislación</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Verificación de consumo y rendimiento</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>Informe técnico detallado</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>

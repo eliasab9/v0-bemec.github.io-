@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Target, Users, Award, TrendingUp } from "lucide-react"
 import Link from "next/link"
+import { HeroCarousel } from "@/components/hero-carousel"
 
 export const metadata = {
   title: "Quienes Somos | BEMEC S.A.",
@@ -9,10 +10,28 @@ export const metadata = {
 }
 
 export default function QuienesSomosPage() {
+  const carouselImages = [
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/83809d97-b2d4-4573-870e-b489ff02b6cc-pYMg3IJxoxbbTn6XWbsmTlQ7XDpaWN.jpeg",
+      alt: "Instalación de bomba industrial con grúa - BEMEC S.A.",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1902-tAlUfEKdmdcYD5bpEtnfiC8Z8JUhjD.jpeg",
+      alt: "Rebobinado de motor eléctrico - BEMEC S.A.",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e0163f0a-6bb0-492a-a400-140aa67b7d15-WLqjNv9apCQSBiJftbvUe2zqcIuf94.jpeg",
+      alt: "Reparación de estator de motor industrial - BEMEC S.A.",
+    },
+  ]
+
   return (
     <>
       <Navigation />
       <main className="min-h-screen">
+        {/* Hero Carousel */}
+        <HeroCarousel images={carouselImages} />
+
         {/* Hero Section */}
         <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
@@ -26,7 +45,7 @@ export default function QuienesSomosPage() {
         </section>
 
         {/* Company Story */}
-        <section className="border-b border-border py-16 md:py-20 mx-0 px-56">
+        <section className="border-b border-border px-4 py-16 md:px-8 md:py-20">
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl text-center">Nuestra Historia</h2>
             <div className="space-y-4 text-muted-foreground md:text-lg">
