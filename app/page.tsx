@@ -1,8 +1,8 @@
 import { Navigation } from "@/components/navigation"
-import { HeroCarousel } from "@/components/hero-carousel"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Wrench, Zap, Shield } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -10,28 +10,31 @@ export default function HomePage() {
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="border-b border-border bg-gradient-to-b from-background to-muted/20">
-          <HeroCarousel />
-          <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-24">
-            <h1 className="mb-4 text-balance text-center text-3xl font-bold leading-tight sm:mb-6 sm:text-4xl lg:text-6xl">
+        <section className="relative border-b border-border">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/bemec-field-motor-testing.jpg"
+              alt="BEMEC técnico realizando pruebas en campo"
+              fill
+              className="object-cover"
+              priority
+              quality={95}
+            />
+            {/* Dark overlay gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 sm:py-32 md:py-40">
+            <h1 className="mb-4 text-balance text-center text-3xl font-bold leading-tight text-white sm:mb-6 sm:text-4xl lg:text-6xl">
               Soluciones Electromecánicas de Confianza
             </h1>
-            <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base text-muted-foreground sm:mb-8 sm:text-lg">
+            <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base text-white/90 sm:mb-8 sm:text-lg">
               Venta, reparación y mantenimiento de motores eléctricos, electrobombas y reductores de velocidad. Más de
               30 años de experiencia respaldando a la industria argentina.
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <Link href="/contacto" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full text-base font-semibold sm:w-auto">
-                  Solicitar Cotización
-                </Button>
-              </Link>
-              <Link href="/nuestros-servicios" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full bg-transparent text-base font-semibold sm:w-auto">
-                  Ver Servicios
-                </Button>
-              </Link>
-            </div>
+            
           </div>
         </section>
 
