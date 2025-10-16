@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Send, CheckCircle2, AlertCircle } from "lucide-react"
+import { Send, CheckCircle2, AlertCircle, Info } from "lucide-react"
 import { submitContactForm } from "@/app/actions"
 
 export function ContactForm() {
@@ -136,23 +136,29 @@ export function ContactForm() {
       )}
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-accent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
-      >
-        {status === "loading" ? (
-          <>
-            <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
-            Enviando...
-          </>
-        ) : (
-          <>
-            <Send className="h-5 w-5" />
-            Enviar
-          </>
-        )}
-      </button>
+      <div className="space-y-3">
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-accent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {status === "loading" ? (
+            <>
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
+              Enviando...
+            </>
+          ) : (
+            <>
+              <Send className="h-5 w-5" />
+              Enviar
+            </>
+          )}
+        </button>
+        <div className="flex items-start gap-2 text-sm text-muted-foreground">
+          <Info className="h-4 w-4 shrink-0 mt-0.5" />
+          <p>Por favor, revisar la casilla de spam con nuestra respuesta</p>
+        </div>
+      </div>
     </form>
   )
 }
