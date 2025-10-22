@@ -15,11 +15,25 @@ export default function AsesoramientoPage() {
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
-          <div className="mx-auto max-w-4xl">
+        <section className="relative overflow-hidden rounded-xl border-b border-border px-4 py-16 md:py-20">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/bemec-consulting-laptop.png"
+              alt="Asesoramiento técnico profesional"
+              fill
+              className="object-cover"
+              priority
+              quality={95}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-4xl">
             <Link
               href="/nuestros-servicios"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+              className="mb-6 inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               Volver a Servicios
@@ -27,8 +41,10 @@ export default function AsesoramientoPage() {
             <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
               <Headphones className="h-8 w-8 text-primary" />
             </div>
-            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Asesoramiento Técnico</h1>
-            <p className="text-balance text-lg text-muted-foreground md:text-xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight text-white md:text-5xl">
+              Asesoramiento Técnico
+            </h1>
+            <p className="text-balance text-lg text-white/90 md:text-xl">
               Asesoramiento especializado para la selección, instalación y optimización de equipos electromecánicos
             </p>
           </div>

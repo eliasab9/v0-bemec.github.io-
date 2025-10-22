@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { Wrench, Zap, Shield, CheckCircle2, Settings, Package, Headphones, Clock, Activity } from "lucide-react"
+import { Wrench, Zap, Shield, CheckCircle2, Settings, Package, Clock, Activity } from "lucide-react"
 import Link from "next/link"
 import { HeroCarousel } from "@/components/hero-carousel"
+import Image from "next/image"
 
 export const metadata = {
   title: "Nuestros Servicios | BEMEC S.A.",
@@ -33,12 +34,25 @@ export default function NuestrosServiciosPage() {
         <HeroCarousel images={carouselImages} />
 
         {/* Hero Section */}
-        <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+        <section className="relative overflow-hidden rounded-xl border-b border-border px-4 py-24 md:py-32">
+          <div className="absolute inset-0">
+            <Image
+              src="/bemec-motor-team-work.jpg"
+              alt="Técnicos BEMEC trabajando en motor eléctrico con bobinados de cobre"
+              fill
+              className="object-cover"
+              priority
+              quality={95}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-4xl text-center">
+            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
               Nuestros Servicios
             </h1>
-            <p className="text-balance text-lg text-muted-foreground md:text-xl">
+            <p className="text-balance text-lg text-white/90 md:text-xl">
               Soluciones integrales para todas sus necesidades en motores eléctricos y electrobombas
             </p>
           </div>
@@ -150,7 +164,6 @@ export default function NuestrosServiciosPage() {
               </Link>
 
               {/* Asesoramiento */}
-              
 
               {/* Ensayos Predictivos */}
               <Link href="/nuestros-servicios/ensayos-predictivos" className="group">

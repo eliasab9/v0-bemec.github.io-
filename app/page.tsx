@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Wrench, Zap, Shield } from "lucide-react"
 import Link from "next/link"
+import { HeroCarousel } from "@/components/hero-carousel"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -11,30 +12,35 @@ export default function HomePage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative border-b border-border">
-          {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/bemec-field-motor-testing.jpg"
-              alt="BEMEC técnico realizando pruebas en campo"
-              fill
-              className="object-cover"
-              priority
-              quality={95}
+            <HeroCarousel
+              images={[
+                {
+                  src: "/bemec-workshop-grinding.jpg",
+                  alt: "Técnico de BEMEC realizando trabajo de amolado con chispas",
+                },
+                {
+                  src: "/bemec-workshop-tools.jpg",
+                  alt: "Técnico de BEMEC seleccionando herramientas en taller organizado",
+                },
+                {
+                  src: "/bemec-workshop-motor.jpg",
+                  alt: "Técnico de BEMEC inspeccionando motor eléctrico con componentes calientes",
+                },
+              ]}
             />
-            {/* Dark overlay gradient for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
           </div>
 
           {/* Content */}
           <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 sm:py-32 md:py-40">
-            <h1 className="mb-4 text-balance text-center text-3xl font-bold leading-tight text-white sm:mb-6 sm:text-4xl lg:text-6xl">
+            <h1 className="mb-4 text-balance text-center text-3xl font-bold leading-tight text-white sm:mb-6 sm:text-4xl lg:text-7xl">
               Soluciones Electromecánicas de Confianza
             </h1>
-            <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base text-white/90 sm:mb-8 sm:text-lg">
+            <p className="mx-auto mb-6 max-w-2xl text-balance text-center text-base leading-snug text-white/90 sm:mb-8 sm:text-lg md:text-lg">
               Venta, reparación y mantenimiento de motores eléctricos, electrobombas y reductores de velocidad. Más de
               30 años de experiencia respaldando a la industria argentina.
             </p>
-            
           </div>
         </section>
 
@@ -141,10 +147,25 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-border bg-muted/30 px-4 py-12 sm:py-16">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl md:text-4xl">¿Necesitás una Cotización?</h2>
-            <p className="mb-6 text-base text-muted-foreground sm:mb-8 sm:text-lg">
+        <section className="relative overflow-hidden rounded-xl border-t border-border px-4 py-12 sm:py-16">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/bemec-consulting-laptop.png"
+              alt="Consultoría profesional BEMEC"
+              fill
+              className="object-cover"
+              quality={95}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-4xl text-center">
+            <h2 className="mb-3 text-2xl font-bold text-white sm:mb-4 sm:text-3xl md:text-4xl">
+              ¿Necesitás una Cotización?
+            </h2>
+            <p className="mb-6 text-base text-white/90 sm:mb-8 sm:text-lg">
               Contactanos hoy y recibí asesoramiento personalizado para tu proyecto
             </p>
             <Link href="/contacto">

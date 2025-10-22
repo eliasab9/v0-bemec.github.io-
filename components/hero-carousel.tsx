@@ -48,28 +48,46 @@ export function HeroCarousel({ images }: HeroCarouselProps) {
   }, [])
 
   return (
-    <div className="group relative w-full overflow-hidden rounded-lg bg-muted/20">
+    <div className="group relative h-full w-full overflow-hidden rounded-xl">
       {/* Carousel Container */}
-      
+      <div className="relative h-full w-full">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.src || "/placeholder.svg"}
+              alt={slide.alt}
+              fill
+              className="object-cover object-[center_60%]"
+              priority={index === 0}
+              quality={95}
+            />
+          </div>
+        ))}
+      </div>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 opacity-0 shadow-lg transition-opacity hover:bg-background group-hover:opacity-100 sm:left-4 sm:p-3"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/80 p-2 opacity-0 shadow-lg transition-opacity hover:bg-background group-hover:opacity-100 sm:left-4 sm:p-3"
         aria-label="Imagen anterior"
       >
         <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-background/80 p-2 opacity-0 shadow-lg transition-opacity hover:bg-background group-hover:opacity-100 sm:right-4 sm:p-3"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/80 p-2 opacity-0 shadow-lg transition-opacity hover:bg-background group-hover:opacity-100 sm:right-4 sm:p-3"
         aria-label="Siguiente imagen"
       >
         <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
       </button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2 sm:bottom-4 sm:gap-3">
+      <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2 sm:bottom-4 sm:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}

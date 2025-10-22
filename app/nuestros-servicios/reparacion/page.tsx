@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Wrench, CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { RepairCarousel } from "@/components/repair-carousel"
+import Image from "next/image"
 
 export const metadata = {
   title: "Reparación Especializada | BEMEC S.A.",
@@ -16,34 +16,48 @@ export default function ReparacionPage() {
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
-          <div className="mx-auto max-w-4xl">
+        <section className="relative overflow-hidden rounded-xl border-b border-border px-4 py-24 md:py-32">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/bemec-rewinding-hands.png"
+              alt="BEMEC motor rewinding craftsmanship"
+              fill
+              className="object-cover"
+              priority
+              quality={95}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-4xl">
             <Link
               href="/nuestros-servicios"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+              className="mb-6 inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               Volver a Servicios
             </Link>
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-              <Wrench className="h-8 w-8 text-primary" />
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm">
+              <Wrench className="h-8 w-8 text-white" />
             </div>
-            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Reparación Especializada</h1>
-            <p className="text-balance text-lg text-muted-foreground md:text-xl">
-              En BEMEC S.A. contamos con más de 30 años de experiencia en la reparación de motores eléctricos y electrobombas. Nuestro equipo técnico especializado utiliza tecnología de última generación para garantizar reparaciones de la más alta calidad
+            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight text-white md:text-5xl">
+              Reparación Especializada
+            </h1>
+            <p className="text-balance text-lg text-white/90 md:text-xl">
+              En BEMEC S.A. contamos con más de 30 años de experiencia en la reparación de motores eléctricos y
+              electrobombas. Nuestro equipo técnico especializado utiliza tecnología de última generación para
+              garantizar reparaciones de la más alta calidad
             </p>
           </div>
         </section>
 
         {/* Image Section */}
-        
 
         {/* Details Section */}
         <section className="border-b border-border px-4 py-16 md:py-20">
           <div className="mx-auto max-w-4xl">
-            
-            
-
             {/* Proceso de Reparación Section */}
             <div className="mb-12 rounded-xl bg-muted/50 p-8">
               <h3 className="mb-4 text-2xl font-bold">Proceso de Reparación</h3>

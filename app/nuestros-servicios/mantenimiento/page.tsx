@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Zap, CheckCircle2, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export const metadata = {
   title: "Mantenimiento Preventivo | BEMEC S.A.",
@@ -15,21 +16,37 @@ export default function MantenimientoPage() {
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="border-b border-border bg-gradient-to-b from-background to-muted/20 px-4 py-16 md:py-20">
-          <div className="mx-auto max-w-4xl">
+        <section className="relative overflow-hidden rounded-xl border-b border-border px-4 py-24 md:py-32">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/bemec-motor-front-view.png"
+              alt="BEMEC industrial motor maintenance"
+              fill
+              className="object-cover"
+              priority
+              quality={95}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/50 to-black/40" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-4xl">
             <Link
               href="/nuestros-servicios"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+              className="mb-6 inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               Volver a Servicios
             </Link>
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-              <Zap className="h-8 w-8 text-primary" />
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm">
+              <Zap className="h-8 w-8 text-white" />
             </div>
-            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight md:text-5xl">Mantenimiento Preventivo</h1>
+            <h1 className="mb-6 text-balance text-4xl font-bold leading-tight text-white md:text-5xl">
+              Mantenimiento Preventivo
+            </h1>
             {/* Brief description of preventive maintenance */}
-            <h2 className="text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
+            <h2 className="text-pretty text-lg leading-relaxed text-white/90 md:text-xl">
               A través de inspecciones programadas, análisis predictivos y ajustes especializados, identificamos y
               corregimos problemas potenciales antes de que se conviertan en fallas costosas.
             </h2>
@@ -43,9 +60,7 @@ export default function MantenimientoPage() {
           <div className="mx-auto max-w-4xl">
             {/* Beneficios Section */}
             <div className="mb-12 rounded-xl bg-muted/50 p-8">
-              <h3 className="mb-6 text-2xl font-bold text-center text-center">
-                Beneficios
-              </h3>
+              <h3 className="mb-6 text-2xl font-bold text-center">Beneficios</h3>
               <div className="grid gap-6 md:grid-cols-3">
                 <div>
                   <h4 className="mb-2 font-semibold text-primary">Reducción de Costos</h4>
@@ -180,7 +195,9 @@ export default function MantenimientoPage() {
                 Cada visita de mantenimiento incluye un informe técnico completo que documenta:
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Evaluación completa del estado general del equipo, junto con todas las mediciones eléctricas y mecánicas realizadas durante la inspección. Documentamos los trabajos realizados, proporcionando recomendaciones específicas para las próximas intervenciones preventivas.
+                Evaluación completa del estado general del equipo, junto con todas las mediciones eléctricas y mecánicas
+                realizadas durante la inspección. Documentamos los trabajos realizados, proporcionando recomendaciones
+                específicas para las próximas intervenciones preventivas.
               </p>
             </div>
           </div>
