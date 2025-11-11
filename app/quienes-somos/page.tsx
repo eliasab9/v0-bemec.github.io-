@@ -97,8 +97,8 @@ export default function QuienesSomosPage() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <h4 className="mb-1 text-lg font-semibold">Presidente y Co-fundadora</h4>
-                  <p className="text-sm text-muted-foreground">BEMEC S.A.</p>
+                  <h4 className="mb-1 text-lg font-semibold">Eliana Baldasso</h4>
+                  <p className="text-sm text-muted-foreground">Presidente y Co-fundadora</p>
                 </div>
 
                 {/* Production Manager */}
@@ -112,8 +112,8 @@ export default function QuienesSomosPage() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <h4 className="mb-1 text-lg font-semibold">Vicepresidente y Co-fundador</h4>
-                  <p className="text-sm text-muted-foreground">BEMEC S.A.</p>
+                  <h4 className="mb-1 text-lg font-semibold">Pablo Agustin</h4>
+                  <p className="text-sm text-muted-foreground">Vicepresidente y Co-fundador</p>
                 </div>
 
                 {/* Vice President */}
@@ -127,8 +127,8 @@ export default function QuienesSomosPage() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <h4 className="mb-1 text-lg font-semibold">Gerente de Producción y Ventas</h4>
-                  <p className="text-sm text-muted-foreground">BEMEC S.A.</p>
+                  <h4 className="mb-1 text-lg font-semibold">Elias Agustin Baldasso</h4>
+                  <p className="text-sm text-muted-foreground">Gerente de Producción y Ventas</p>
                 </div>
               </div>
             </div>
