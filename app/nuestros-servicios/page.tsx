@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { Wrench, Zap, Shield, CheckCircle2, Settings, Package, Clock, Activity } from "lucide-react"
+import { Wrench, Zap, Shield, CheckCircle2, Settings, Package, Clock, Activity, ShoppingCart } from "lucide-react"
 import Link from "next/link"
 import { HeroCarousel } from "@/components/hero-carousel"
 import Image from "next/image"
@@ -164,6 +164,69 @@ export default function NuestrosServiciosPage() {
               </Link>
 
               {/* Asesoramiento */}
+              <Link href="/nuestros-servicios/asesoramiento" className="group">
+                <div className="h-full rounded-xl border border-border bg-card p-8 transition-all hover:border-primary/50 hover:shadow-lg">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                    <Activity className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="mb-3 text-2xl font-bold">Asesoramiento Técnico</h3>
+                  <p className="mb-4 text-muted-foreground">
+                    Asesoramiento especializado para la selección, dimensionamiento y optimización de equipos eléctricos
+                    según sus necesidades específicas.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Selección de equipos apropiados</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Análisis de eficiencia energética</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Estudios de viabilidad técnica</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Capacitación del personal</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4 text-sm font-semibold text-primary">Ver más detalles →</p>
+                </div>
+              </Link>
+
+              {/* Ventas */}
+              <Link href="/nuestros-servicios/ventas" className="group">
+                <div className="h-full rounded-xl border border-border bg-card p-8 transition-all hover:border-primary/50 hover:shadow-lg">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                    <ShoppingCart className="h-7 w-7 text-primary" />
+                  </div>
+                  <h3 className="mb-3 text-2xl font-bold">Ventas</h3>
+                  <p className="mb-4 text-muted-foreground">
+                    Servicio de ventas especializado para todas sus necesidades industriales.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Asesoramiento técnico comercial</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Cotizaciones personalizadas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Entrega y logística</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>Soporte posventa</span>
+                    </li>
+                  </ul>
+                  <p className="mt-4 text-sm font-semibold text-primary">Ver más detalles →</p>
+                </div>
+              </Link>
 
               {/* Ensayos Predictivos */}
               <Link href="/nuestros-servicios/ensayos-predictivos" className="group">
